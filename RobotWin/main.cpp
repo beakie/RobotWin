@@ -4,9 +4,8 @@
 
 int main(int argc, char *argv[])
 {
-	Common::Space3d::Coordinate c(0, 0, 0);
-	Common::Space3d::EulerAnglesXYX e(0, 0, 0);
-	Common::Matrix4f m = e.getMatrix();
+	Movement::Skeletal skeletal = Movement::Skeletal();
+	skeletal.addBone(new Movement::Servo());
 
 	QApplication a(argc, argv);
 	RobotWin w;

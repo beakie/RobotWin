@@ -21,7 +21,8 @@ public:
         Bones = Common::PArray<Movement::Bone>();
     }
 
-    template <typename TActuator>
+public:
+	template <typename TActuator>
     unsigned int addBone(TActuator * actuator)
     {
         return addBone(0, actuator);
