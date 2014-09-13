@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{cb543730-3e2e-47bc-9ea2-88472f84e938}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{adb8cb60-297c-4888-b25c-87f85fdb2ee0}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files\Robot">
+      <UniqueIdentifier>{d747acad-a0b4-43fe-a9b4-fb1d4d390007}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="robotwin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_robotwin.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_robotwin.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_robotwin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="robotwin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="robotwin.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="robotwin.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_robotwin.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common_types.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-array.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-imatrix.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-math.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-matrix2.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-matrix3.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-matrix4.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-parray.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-axonometric.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-axonometrictype.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-dimetric.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-iprojection.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-isometric.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-orthographic.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-orthographicx.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-orthographicy.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-orthographicz.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-perspective.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-trimetric.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-weakperspective.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-weakperspectivex.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-weakperspectivey.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-projection3d-weakperspectivez.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-quaternion.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space2d.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space2d-linedistanceangle.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space2d-linesegment.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space2d-lineslopeintercept.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space2d-plot.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-axis3d.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-axisangle.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-coordinate.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-euleranglesxyx.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-euleranglesxzx.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-euleranglesyxy.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-euleranglesyzy.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-eulerangleszxz.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-eulerangleszyz.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-fixedaxisangle.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-fixedaxisanglex.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-fixedaxisangley.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-fixedaxisanglez.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-helpers.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-irotation.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-linesegment.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-rotationorder.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryananglesxyz.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryananglesxzy.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryananglesyxz.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryananglesyzx.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryanangleszxy.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-taitbryanangleszyx.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-space3d-triplerotation.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-unitvector3.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-vector2.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-vector3.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\common-vector4.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\emulation.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\implementations.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\implementations-qt.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\movement.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\movement-bone.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\movement-iactuator.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\movement-servo.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\movement-skeletal.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\namespaces.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\vision.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\vision-houghtransform.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot\vision-itechnique.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
