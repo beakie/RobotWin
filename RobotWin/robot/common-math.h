@@ -1,6 +1,8 @@
 #ifndef COMMONMATH_H
 #define COMMONMATH_H
 
+#include <cmath> //todo: REMOVE ME!!!!!!!!!
+
 namespace Common
 {
 
@@ -10,20 +12,20 @@ public:
     template <typename T>
     static T sin(const T value)
     {
-        return value;
+        return std::sin(value);
     }
 
     template <typename T>
     static T cos(const T value)
     {
-        return value;
-    }
+		return std::cos(value);
+	}
 
     template <typename T>
     static T tan(const T value)
     {
-        return value;
-    }
+		return std::tan(value);
+	}
 
     template <typename T>
     static T degreeToRadian(const T value)
@@ -40,7 +42,7 @@ public:
     template <typename T1, typename T2>
     static T1 power(const T1 value, const T2 p)
     {
-        return value + p; // BALLLLLLSSSSS (todo). make operator too.
+		return std::pow(value, p);
     }
 
     static const long double Pi; // acos(-1)
