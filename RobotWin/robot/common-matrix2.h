@@ -21,9 +21,9 @@ struct Matrix2 : public IMatrix<TVALUE, unsigned char, Matrix2<TVALUE> >
         set(value);
     }
 
-    Matrix2(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x2y1, const TVALUE x2y2)
+	Matrix2(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
     {
-        set(x1y1, x1y2, x2y1, x2y2);
+		set(x1y1, x2y1, x1y2, x2y2);
     }
 
     Matrix2(const Matrix2<TVALUE> &matrix)
@@ -36,7 +36,7 @@ struct Matrix2 : public IMatrix<TVALUE, unsigned char, Matrix2<TVALUE> >
         operator =(value);
     }
 
-    void set(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x2y1, const TVALUE x2y2)
+	void set(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x1y2, const TVALUE x2y2)
     {
         values[0][0] = x1y1;
         values[0][1] = x1y2;
@@ -95,10 +95,36 @@ struct Matrix2 : public IMatrix<TVALUE, unsigned char, Matrix2<TVALUE> >
 			(matrix.values[1][0] * values[0][1]) + (matrix.values[1][1] * values[1][1]));
 	}
 
-    Matrix2<TVALUE> & operator*=(const Matrix2<TVALUE> &matrix)
-    {
-        return *this * matrix;
-    }
+	Matrix2<TVALUE> & operator*=(const Matrix2<TVALUE> &matrix)
+	{
+		return *this * matrix;
+	}
+
+	Matrix2<TVALUE> operator+(const Matrix2<TVALUE> &matrix) const
+	{
+		return Matrix2<TVALUE>(matrix.values[0][0] + values[0][0],
+								matrix.values[0][1] + values[0][1],
+								matrix.values[1][0] + values[1][0],
+								matrix.values[1][1] + values[1][1]);
+	}
+
+	Matrix2<TVALUE> & operator+=(const Matrix2<TVALUE> &matrix)
+	{
+		return *this + matrix;
+	}
+
+	Matrix2<TVALUE> operator-(const Matrix2<TVALUE> &matrix) const
+	{
+		return Matrix2<TVALUE>(matrix.values[0][0] - values[0][0],
+								matrix.values[0][1] - values[0][1],
+								matrix.values[1][0] - values[1][0],
+								matrix.values[1][1] - values[1][1]);
+	}
+
+	Matrix2<TVALUE> & operator-=(const Matrix2<TVALUE> &matrix)
+	{
+		return *this - matrix;
+	}
 
     bool operator==(const Matrix2<TVALUE> &matrix)
     {

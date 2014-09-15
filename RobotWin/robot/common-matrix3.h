@@ -110,6 +110,42 @@ struct Matrix3 : public IMatrix<TVALUE, unsigned char, Matrix3<TVALUE> >
         return *this * matrix;
     }
 
+	Matrix3<TVALUE> operator+(const Matrix3<TVALUE> &matrix) const
+	{
+		return Matrix3<TVALUE>(matrix.values[0][0] + values[0][0],
+								matrix.values[0][1] + values[0][1],
+								matrix.values[0][2] + values[0][2],
+								matrix.values[1][0] + values[1][0],
+								matrix.values[1][1] + values[1][1],
+								matrix.values[1][2] + values[1][2],
+								matrix.values[2][0] + values[2][0],
+								matrix.values[2][1] + values[2][1],
+								matrix.values[2][2] + values[2][2]);
+	}
+
+	Matrix3<TVALUE> & operator+=(const Matrix3<TVALUE> &matrix)
+	{
+		return *this + matrix;
+	}
+
+	Matrix3<TVALUE> operator-(const Matrix3<TVALUE> &matrix) const
+	{
+		return Matrix3<TVALUE>(matrix.values[0][0] - values[0][0],
+								matrix.values[0][1] - values[0][1],
+								matrix.values[0][2] - values[0][2],
+								matrix.values[1][0] - values[1][0],
+								matrix.values[1][1] - values[1][1],
+								matrix.values[1][2] - values[1][2],
+								matrix.values[2][0] - values[2][0],
+								matrix.values[2][1] - values[2][1],
+								matrix.values[2][2] - values[2][2]);
+	}
+
+	Matrix3<TVALUE> & operator-=(const Matrix3<TVALUE> &matrix)
+	{
+		return *this - matrix;
+	}
+
     bool operator==(const Matrix3<TVALUE> &matrix)
     {
         for(unsigned char x = 0; x < 3; x++)

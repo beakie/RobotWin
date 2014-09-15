@@ -21,9 +21,9 @@ struct Matrix4 : public IMatrix<TVALUE, unsigned char, Matrix4<TVALUE> >
         set(value);
     }
 
-    Matrix4(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x1y3, const TVALUE x1y4, const TVALUE x2y1, const TVALUE x2y2, const TVALUE x2y3, const TVALUE x2y4, const TVALUE x3y1, const TVALUE x3y2, const TVALUE x3y3, const TVALUE x3y4, const TVALUE x4y1, const TVALUE x4y2, const TVALUE x4y3, const TVALUE x4y4)
+	Matrix4(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x3y1, const TVALUE x4y1, const TVALUE x1y2, const TVALUE x2y2, const TVALUE x3y2, const TVALUE x4y2, const TVALUE x1y3, const TVALUE x2y3, const TVALUE x3y3, const TVALUE x4y3, const TVALUE x1y4, const TVALUE x2y4, const TVALUE x3y4, const TVALUE x4y4)
     {
-        set(x1y1, x1y2, x1y3, x1y4, x2y1, x2y2, x2y3, x2y4, x3y1, x3y2, x3y3, x3y4, x4y1, x4y2, x4y3, x4y4);
+		set(x1y1, x2y1, x3y1, x4y1, x1y2, x2y2, x3y2, x4y2, x1y3, x2y3, x3y3, x4y3, x1y4, x2y4, x3y4, x4y4);
     }
 
     Matrix4(const Matrix4<TVALUE> &matrix)
@@ -36,7 +36,7 @@ struct Matrix4 : public IMatrix<TVALUE, unsigned char, Matrix4<TVALUE> >
         operator =(value);
     }
 
-    void set(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x1y3, const TVALUE x1y4, const TVALUE x2y1, const TVALUE x2y2, const TVALUE x2y3, const TVALUE x2y4, const TVALUE x3y1, const TVALUE x3y2, const TVALUE x3y3, const TVALUE x3y4, const TVALUE x4y1, const TVALUE x4y2, const TVALUE x4y3, const TVALUE x4y4)
+	void set(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x3y1, const TVALUE x4y1, const TVALUE x1y2, const TVALUE x2y2, const TVALUE x3y2, const TVALUE x4y2, const TVALUE x1y3, const TVALUE x2y3, const TVALUE x3y3, const TVALUE x4y3, const TVALUE x1y4, const TVALUE x2y4, const TVALUE x3y4, const TVALUE x4y4)
     {
         values[0][0] = x1y1;
         values[0][1] = x1y2;
@@ -123,6 +123,56 @@ struct Matrix4 : public IMatrix<TVALUE, unsigned char, Matrix4<TVALUE> >
     {
         return *this * matrix;
     }
+
+	Matrix4<TVALUE> operator+(const Matrix4<TVALUE> &matrix) const
+	{
+		return Matrix4<TVALUE>(matrix.values[0][0] + values[0][0],
+								matrix.values[0][1] + values[0][1],
+								matrix.values[0][2] + values[0][2],
+								matrix.values[0][3] + values[0][3],
+								matrix.values[1][0] + values[1][0],
+								matrix.values[1][1] + values[1][1],
+								matrix.values[1][2] + values[1][2],
+								matrix.values[1][3] + values[1][3],
+								matrix.values[2][0] + values[2][0],
+								matrix.values[2][1] + values[2][1],
+								matrix.values[2][2] + values[2][2],
+								matrix.values[2][3] + values[2][3],
+								matrix.values[3][0] + values[3][0],
+								matrix.values[3][1] + values[3][1],
+								matrix.values[3][2] + values[3][2],
+								matrix.values[3][3] + values[3][3]);
+	}
+
+	Matrix4<TVALUE> & operator+=(const Matrix4<TVALUE> &matrix)
+	{
+		return *this + matrix;
+	}
+
+	Matrix4<TVALUE> operator-(const Matrix4<TVALUE> &matrix) const
+	{
+		return Matrix4<TVALUE>(matrix.values[0][0] - values[0][0],
+								matrix.values[0][1] - values[0][1],
+								matrix.values[0][2] - values[0][2],
+								matrix.values[0][3] - values[0][3],
+								matrix.values[1][0] - values[1][0],
+								matrix.values[1][1] - values[1][1],
+								matrix.values[1][2] - values[1][2],
+								matrix.values[1][3] - values[1][3],
+								matrix.values[2][0] - values[2][0],
+								matrix.values[2][1] - values[2][1],
+								matrix.values[2][2] - values[2][2],
+								matrix.values[2][3] - values[2][3],
+								matrix.values[3][0] - values[3][0],
+								matrix.values[3][1] - values[3][1],
+								matrix.values[3][2] - values[3][2],
+								matrix.values[3][3] - values[3][3]);
+	}
+
+	Matrix4<TVALUE> & operator-=(const Matrix4<TVALUE> &matrix)
+	{
+		return *this - matrix;
+	}
 
     bool operator==(const Matrix4<TVALUE> &matrix)
     {
