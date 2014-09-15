@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	Movement::Skeletal skeletal = Movement::Skeletal();
-	skeletal.addBone(new Movement::Servo());
+	//skeletal.addBone(new Movement::Servo());
 
 	QApplication a(argc, argv);
 	RobotWin w;
