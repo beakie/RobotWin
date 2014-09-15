@@ -189,6 +189,7 @@
     <ClInclude Include="robot\vision-houghtransform.h" />
     <ClInclude Include="robot\vision-itechnique.h" />
     <ClInclude Include="robot\vision.h" />
+    <ClInclude Include="TEMP.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="robotwin.qrc">

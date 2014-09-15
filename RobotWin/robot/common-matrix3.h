@@ -21,9 +21,9 @@ struct Matrix3 : public IMatrix<TVALUE, unsigned char, Matrix3<TVALUE> >
         set(value);
     }
 
-    Matrix3(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x1y3, const TVALUE x2y1, const TVALUE x2y2, const TVALUE x2y3, const TVALUE x3y1, const TVALUE x3y2, const TVALUE x3y3)
+	Matrix3(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x3y1, const TVALUE x1y2, const TVALUE x2y2, const TVALUE x3y2, const TVALUE x1y3, const TVALUE x2y3, const TVALUE x3y3)
     {
-        set(x1y1, x1y2, x1y3, x2y1, x2y2, x2y3, x3y1, x3y2, x3y3);
+		set(x1y1, x2y1, x3y1, x1y2, x2y2, x3y2, x1y3, x2y3, x3y3);
     }
 
     Matrix3(const Matrix3<TVALUE> &matrix)
@@ -36,7 +36,7 @@ struct Matrix3 : public IMatrix<TVALUE, unsigned char, Matrix3<TVALUE> >
         operator =(value);
     }
 
-    void set(const TVALUE x1y1, const TVALUE x1y2, const TVALUE x1y3, const TVALUE x2y1, const TVALUE x2y2, const TVALUE x2y3, const TVALUE x3y1, const TVALUE x3y2, const TVALUE x3y3)
+	void set(const TVALUE x1y1, const TVALUE x2y1, const TVALUE x3y1, const TVALUE x1y2, const TVALUE x2y2, const TVALUE x3y2, const TVALUE x1y3, const TVALUE x2y3, const TVALUE x3y3)
     {
         values[0][0] = x1y1;
         values[0][1] = x1y2;
@@ -92,20 +92,18 @@ struct Matrix3 : public IMatrix<TVALUE, unsigned char, Matrix3<TVALUE> >
         return *this;
     }
 
-    Matrix3<TVALUE> & operator*(const Matrix3<TVALUE> &matrix)
+    Matrix3<TVALUE> operator*(const Matrix3<TVALUE> &matrix) const
     {
-         set((values[0][0] * matrix.values[0][0]) + (values[0][1] * matrix.values[1][0]) + (values[0][2] * matrix.values[2][0]),
-                (values[0][0] * matrix.values[0][1]) + (values[0][1] * matrix.values[1][1]) + (values[0][2] * matrix.values[2][1]),
-                (values[0][0] * matrix.values[0][2]) + (values[0][1] * matrix.values[1][2]) + (values[0][2] * matrix.values[2][2]),
-                (values[1][0] * matrix.values[0][0]) + (values[1][1] * matrix.values[1][0]) + (values[1][2] * matrix.values[2][0]),
-                (values[1][0] * matrix.values[0][1]) + (values[1][1] * matrix.values[1][1]) + (values[1][2] * matrix.values[2][1]),
-                (values[1][0] * matrix.values[0][2]) + (values[1][1] * matrix.values[1][2]) + (values[1][2] * matrix.values[2][2]),
-                (values[2][0] * matrix.values[0][0]) + (values[2][1] * matrix.values[1][0]) + (values[2][2] * matrix.values[2][0]),
-                (values[2][0] * matrix.values[0][1]) + (values[2][1] * matrix.values[1][1]) + (values[2][2] * matrix.values[2][1]),
-                (values[2][0] * matrix.values[0][2]) + (values[2][1] * matrix.values[1][2]) + (values[2][2] * matrix.values[2][2]));
-
-         return *this;
-    }
+		return Matrix3<TVALUE>((matrix.values[0][0] * values[0][0]) + (matrix.values[0][1] * values[1][0]) + (matrix.values[0][2] * values[2][0]),
+			(matrix.values[1][0] * values[0][0]) + (matrix.values[1][1] * values[1][0]) + (matrix.values[1][2] * values[2][0]),
+			(matrix.values[2][0] * values[0][0]) + (matrix.values[2][1] * values[1][0]) + (matrix.values[2][2] * values[2][0]),
+			(matrix.values[0][0] * values[0][1]) + (matrix.values[0][1] * values[1][1]) + (matrix.values[0][2] * values[2][1]),
+			(matrix.values[1][0] * values[0][1]) + (matrix.values[1][1] * values[1][1]) + (matrix.values[1][2] * values[2][1]),
+			(matrix.values[2][0] * values[0][1]) + (matrix.values[2][1] * values[1][1]) + (matrix.values[2][2] * values[2][1]),
+			(matrix.values[0][0] * values[0][2]) + (matrix.values[0][1] * values[1][2]) + (matrix.values[0][2] * values[2][2]),
+			(matrix.values[1][0] * values[0][2]) + (matrix.values[1][1] * values[1][2]) + (matrix.values[1][2] * values[2][2]),
+			(matrix.values[2][0] * values[0][2]) + (matrix.values[2][1] * values[1][2]) + (matrix.values[2][2] * values[2][2]));
+	}
 
     Matrix3<TVALUE> & operator*=(const Matrix3<TVALUE> &matrix)
     {

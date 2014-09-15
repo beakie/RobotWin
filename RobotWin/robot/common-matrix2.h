@@ -87,15 +87,13 @@ struct Matrix2 : public IMatrix<TVALUE, unsigned char, Matrix2<TVALUE> >
         return *this;
     }
 
-    Matrix2<TVALUE> & operator*(const Matrix2<TVALUE> &matrix)
-    {
-         set((values[0][0] * matrix.values[0][0]) + (values[0][1] * matrix.values[1][0]),
-                (values[0][0] * matrix.values[0][1]) + (values[0][1] * matrix.values[1][1]),
-                (values[1][0] * matrix.values[0][0]) + (values[1][1] * matrix.values[1][0]),
-                (values[1][0] * matrix.values[0][1]) + (values[1][1] * matrix.values[1][1]));
-
-         return *this;
-    }
+	Matrix2<TVALUE> operator*(const Matrix2<TVALUE> &matrix) const
+	{
+		return Matrix2<TVALUE>((matrix.values[0][0] * values[0][0]) + (matrix.values[0][1] * values[1][0]),
+			(matrix.values[1][0] * values[0][0]) + (matrix.values[1][1] * values[1][0]),
+			(matrix.values[0][0] * values[0][1]) + (matrix.values[0][1] * values[1][1]),
+			(matrix.values[1][0] * values[0][1]) + (matrix.values[1][1] * values[1][1]));
+	}
 
     Matrix2<TVALUE> & operator*=(const Matrix2<TVALUE> &matrix)
     {
