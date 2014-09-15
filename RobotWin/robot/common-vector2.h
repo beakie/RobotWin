@@ -29,20 +29,24 @@ struct Vector2
         return (values[0] * v.values[1]) - (values[1] * v.values[0]);
     }
 
-    Vector2<TVALUE> & operator+(const Vector2<TVALUE> &vector)
+    Vector2<TVALUE> operator+(const Vector2<TVALUE> &vector) const
     {
-        values[0] = vector.values[0] + values[0];
-        values[1] = vector.values[1] + values[1];
+		Vector2<TVALUE> v;
+        
+		v.values[0] = vector.values[0] + values[0];
+		v.values[1] = vector.values[1] + values[1];
 
-         return *this;
+         return v;
     }
 
-    Vector2<TVALUE> & operator-(const Vector2<TVALUE> &vector)
+    Vector2<TVALUE> operator-(const Vector2<TVALUE> &vector) const
     {
-        values[0] = vector.values[0] - values[0];
-        values[1] = vector.values[1] - values[1];
+		Vector2<TVALUE> v;
 
-         return *this;
+		v.values[0] = vector.values[0] - values[0];
+		v.values[1] = vector.values[1] - values[1];
+
+         return v;
     }
 
     Vector2<TVALUE> & operator=(const Vector2<TVALUE> &vector)

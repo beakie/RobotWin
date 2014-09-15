@@ -34,22 +34,26 @@ struct Vector3
         return vector;
     }
 
-    Vector3<TVALUE> & operator+(const Vector3<TVALUE> &vector)
+    Vector3<TVALUE> operator+(const Vector3<TVALUE> &vector) const
     {
-        values[0] = values[0] + vector.values[0];
-        values[1] = values[1] + vector.values[1];
-        values[2] = values[2] + vector.values[2];
+		Vector3<TVALUE> v;
 
-         return *this;
+        v.values[0] = values[0] + vector.values[0];
+		v.values[1] = values[1] + vector.values[1];
+		v.values[2] = values[2] + vector.values[2];
+
+         return v;
     }
 
-    Vector3<TVALUE> & operator-(const Vector3<TVALUE> &vector)
+    Vector3<TVALUE> operator-(const Vector3<TVALUE> &vector) const
     {
-        values[0] = values[0] - vector.values[0];
-        values[1] = values[1] - vector.values[1];
-        values[2] = values[2] - vector.values[2];
+		Vector3<TVALUE> v;
+		
+		v.values[0] = values[0] - vector.values[0];
+		v.values[1] = values[1] - vector.values[1];
+		v.values[2] = values[2] - vector.values[2];
 
-         return *this;
+         return v;
     }
 
     Vector3<TVALUE> & operator=(const Vector3<TVALUE> &vector)

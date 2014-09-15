@@ -44,11 +44,13 @@ struct Coordinate: Vector3<float>
         return Math::power(Math::power(coordinate.values[0] - values[0], 2) + Math::power(coordinate.values[1] - values[1], 2) + Math::power(coordinate.values[2] - values[2], 2), 0.5);
     }
 
-    Coordinate & operator+(const Coordinate &coordinate)
+    Coordinate operator+(const Coordinate &coordinate) const
     {
-        Vector3::operator +((Vector3<float>)coordinate);
+		Coordinate c;
 
-        return *this;
+		//todo
+
+        return c;
     }
 
     Coordinate & operator-(const Coordinate &coordinate)
@@ -65,11 +67,11 @@ struct Coordinate: Vector3<float>
         return *this;
     }
 
-    Coordinate & operator*(const Matrix4<float> &matrix)
+    Coordinate operator*(const Matrix4<float> &matrix) const
     {
         //todo
 
-        return *this;
+        return Coordinate();
     }
 
     virtual ~Coordinate() { }

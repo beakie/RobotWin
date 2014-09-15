@@ -43,11 +43,13 @@ struct Plot : Vector2<float>
         return plot - *this;
     }
 
-    Plot & operator+(const Plot &plot)
+    Plot operator+(const Plot &plot) const
     {
-        Vector2::operator +((Vector2<float>)plot);
+		Plot p;
 
-        return *this;
+        //todo
+
+        return p;
     }
 
     Plot & operator-(const Plot &plot)

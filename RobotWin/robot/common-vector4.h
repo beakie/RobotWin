@@ -35,24 +35,28 @@ struct Vector4
         return vector;
     }
 
-    Vector4<TVALUE> & operator+(const Vector4<TVALUE> &vector)
+    Vector4<TVALUE> operator+(const Vector4<TVALUE> &vector) const
     {
-        values[0] = values[0] + vector.values[0];
-        values[1] = values[1] + vector.values[1];
-        values[2] = values[2] + vector.values[2];
-        values[3] = values[3] + vector.values[3];
+		Vector4<TVALUE> v;
+		
+		v.values[0] = values[0] + vector.values[0];
+		v.values[1] = values[1] + vector.values[1];
+		v.values[2] = values[2] + vector.values[2];
+		v.values[3] = values[3] + vector.values[3];
 
-         return *this;
+         return v;
     }
 
-    Vector4<TVALUE> & operator-(const Vector4<TVALUE> &vector)
+    Vector4<TVALUE> operator-(const Vector4<TVALUE> &vector) const
     {
-        values[0] = values[0] - vector.values[0];
-        values[1] = values[1] - vector.values[1];
-        values[2] = values[2] - vector.values[2];
-        values[3] = values[3] - vector.values[3];
+		Vector4<TVALUE> v;
 
-         return *this;
+        v.values[0] = values[0] - vector.values[0];
+		v.values[1] = values[1] - vector.values[1];
+		v.values[2] = values[2] - vector.values[2];
+		v.values[3] = values[3] - vector.values[3];
+
+         return v;
     }
 
     Vector4<TVALUE> & operator=(const Vector4<TVALUE> &vector)
@@ -72,11 +76,11 @@ struct Vector4
 
     virtual ~Vector4() { }
 
-    Vector4<TVALUE> & operator*(const Matrix4<TVALUE> &matrix)
+    Vector4<TVALUE> operator*(const Matrix4<TVALUE> &matrix) const
     {
         // todo
 
-        return *this;
+		return Vector4<TVALUE>();
     }
 };
 
