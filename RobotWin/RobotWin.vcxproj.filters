@@ -285,8 +285,5 @@
     <ClInclude Include="robot\vision-itechnique.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="TEMP.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
