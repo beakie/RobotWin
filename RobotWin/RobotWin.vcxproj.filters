@@ -286,8 +286,4 @@
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\RobotLinux\RobotLinux.pro" />
-    <None Include="..\RobotLinux\RobotLinux.pro.user" />
-  </ItemGroup>
 </Project>
