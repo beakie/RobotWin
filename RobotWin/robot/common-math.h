@@ -9,21 +9,39 @@ namespace Common
 class Math
 {
 public:
-    template <typename T>
-    static T sin(const T value)
-    {
-        return std::sin(value);
-    }
+	template <typename T>
+	static T sin(const T value)
+	{
+		return std::sin(value);
+	}
 
-    template <typename T>
-    static T cos(const T value)
-    {
+	template <typename T>
+	static T cos(const T value)
+	{
 		return std::cos(value);
 	}
 
-    template <typename T>
-    static T tan(const T value)
-    {
+	template <typename T>
+	static T tan(const T value)
+	{
+		return std::atan(value);
+	}
+
+	template <typename T>
+	static T asin(const T value)
+	{
+		return std::asin(value);
+	}
+
+	template <typename T>
+	static T acos(const T value)
+	{
+		return std::acos(value);
+	}
+
+	template <typename T>
+	static T atan(const T value)
+	{
 		return std::tan(value);
 	}
 
@@ -48,7 +66,7 @@ public:
     static const long double Pi; // acos(-1)
 };
 
-const long double Math::Pi = 3.14159265358979323846; // acos(-1)
+const long double Math::Pi = Common::Math::acos(-1.0);
 
 }
 

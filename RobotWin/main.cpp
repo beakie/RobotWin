@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
 
 	Common::Matrix3f mNew = m1 - m2;
 
+	double x = Common::Math::Pi;
+
 	QApplication a(argc, argv);
 	RobotWin w;
 	w.show();
