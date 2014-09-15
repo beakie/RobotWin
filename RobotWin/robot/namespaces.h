@@ -9,6 +9,5 @@
 #include "implementations.h"
 #include "movement.h"
 #include "vision.h"
-#include "temp.h"
 
 #endif // ROOT_H
