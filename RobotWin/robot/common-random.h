@@ -8,7 +8,7 @@ namespace Common
 		static unsigned int _seed;
 
 	public:
-		Randomizer(const unsigned int seed = 0)
+		Randomizer(const unsigned int seed = 1)
 		{
 			_seed = seed;
 		}
