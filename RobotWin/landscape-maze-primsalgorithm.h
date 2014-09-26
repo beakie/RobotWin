@@ -1,3 +1,6 @@
+#ifndef LANDSCAPEMAZEPRIMSALGORITHM_H
+#define LANDSCAPEMAZEPRIMSALGORITHM_H
+
 #include "common-array.h"
 #include "common-space2d-plot.h"
 #include <random>
@@ -116,3 +119,5 @@ namespace Landscape
 		};
 	}
 }
+
+#endif // LANDSCAPEMAZEPRIMSALGORITHM_H

@@ -55,14 +55,14 @@ struct Plot : Vector2<TVALUE>
 
 	Plot<TVALUE> & operator-(const Plot<TVALUE> &plot)
     {
-        Vector2::operator -((Vector2<float>)plot);
+		Vector2::operator -((Vector2<TVALUE>)plot);
 
         return *this;
     }
 
 	Plot<TVALUE> & operator=(const Plot<TVALUE> &plot)
     {
-        Vector2::operator =((Vector2<float>)plot);
+		Vector2::operator =((Vector2<TVALUE>)plot);
 
         return *this;
     }

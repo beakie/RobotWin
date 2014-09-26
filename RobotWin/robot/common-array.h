@@ -135,6 +135,11 @@ public:
         return Items[n];
     }
 
+	bool exists(const T value)
+	{
+		return false;
+	}
+
     ~Array() {
         delete[] Items;
     }
