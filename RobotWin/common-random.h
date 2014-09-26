@@ -1,3 +1,7 @@
+// http://en.wikipedia.org/wiki/Mersenne_twister
+
+#include <random>
+
 namespace Common
 {
 	class Random
@@ -13,8 +17,8 @@ namespace Common
 
 		unsigned int getNext(const unsigned int lower = 0, const unsigned int upper = 0)
 		{
-			_seed = _seed + 1;
-			return _seed;
+			_seed = 7 * _seed % 11;
+			return _seed % (upper - lower + 1) + lower;
 		}
 	};
 }

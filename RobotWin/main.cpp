@@ -4,6 +4,8 @@
 
 int main(int argc, char *argv[])
 {
+	Common::Random random = Common::Random(123);
+
 	bool** x;
 	{
 		unsigned int seed = 1234;
