@@ -12,7 +12,7 @@ namespace Landscape
 		class PrimsAlgorithm // better name? Prim's Randomized Maze Algorithm
 		{
 		public:
-			bool** Walls;
+			bool** Walls; // Use Common::Image
 
 		private:
 			Common::Array<Common::Space2d::Plot<unsigned int>> _frontier;
@@ -39,6 +39,11 @@ namespace Landscape
 				_frontier = Common::Array<Common::Space2d::Plot<unsigned int>>();
 
 				addCell(0, 0);
+			}
+
+			void getWallImage()
+			{
+
 			}
 
 		private:

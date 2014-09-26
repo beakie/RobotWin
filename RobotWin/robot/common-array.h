@@ -28,8 +28,9 @@ public:
     {
         Count = copy.Count;
         Capacity = copy.Capacity;
-        Items = 0;
+
         Items = new T[Capacity];
+
         for (unsigned int i = 0; i < Count; i++)
             Items[i] = copy.Items[i];
     }
@@ -44,13 +45,26 @@ public:
         return Capacity;
     }
 
-    void addItem(const T &item)
-    {
-        if(Count == Capacity)
-            resize();
-        Items[Count] = item;
-        Count++;
-    }
+	void remove(const unsigned int index)
+	{
+		if (index >= Count)
+			return;
+
+		for (unsigned int i = (index + 1); i < Count; i++)
+			Items[i] = Items[i - 1];
+
+		Count--;
+	}
+
+	void addItem(const T &item)
+	{
+		if (Count == Capacity)
+			resize();
+
+		Items[Count] = item;
+
+		Count++;
+	}
 
     void addArray(const Array<T> &array)
     {
@@ -67,9 +81,12 @@ public:
     void resize(const unsigned int capacity)
     {
         T *x = new T[capacity];
+
         for (unsigned int i = 0; i < Count; i++)
             x[i] = Items[i];
+
         delete[] Items;
+
         Items = x;
         Capacity = capacity;
     }
@@ -82,52 +99,42 @@ public:
         Count = 0;
     }
 
-    Array<T> & operator+(const T &item)
-    {
-        addItem(item);
-
-        return *this;
-    }
-
-    Array<T> & operator+(const Array<T> &array)
-    {
-        addArray(array);
-
-        return *this;
-    }
-
     Array<T> & operator+=(const T &item)
     {
-        return *this + item;
-    }
+		addItem(item);
+
+		return *this;
+	}
 
     Array<T> & operator+=(const Array<T> &array)
     {
-        return *this + array;
-    }
+		addArray(array);
+
+		return *this;
+	}
+
+	Array<T> & operator++(int)
+	{
+		resize(Count++);
+
+		return *this;
+	}
 
     Array<T> & operator++()
     {
         return this->operator ++(0);
     }
 
-    Array<T> & operator++(int)
-    {
-        resize(Count++);
+	Array<T> & operator--(int)
+	{
+		clear();
 
-        return *this;
-    }
+		return *this;
+	}
 
     Array<T> & operator--()
     {
         return this->operator --(0);
-    }
-
-    Array<T> & operator--(int)
-    {
-        clear();
-
-        return *this;
     }
 
     T & operator[] (unsigned int n)
