@@ -6,151 +6,157 @@
 namespace Common
 {
 
-template <typename T>
-struct Array
-{
-
-protected:
-    unsigned int Capacity;
-    unsigned int Count;
-
-public:
-    T *Items;
-
-    Array()
-    {
-        Count = 0;
-        Capacity = 0;
-        Items = 0;
-    }
-
-    Array(Array<T> const &copy)
-    {
-        Count = copy.Count;
-        Capacity = copy.Capacity;
-
-        Items = new T[Capacity];
-
-        for (unsigned int i = 0; i < Count; i++)
-            Items[i] = copy.Items[i];
-    }
-
-    unsigned int count()
-    {
-        return Count;
-    }
-
-    unsigned int capacity()
-    {
-        return Capacity;
-    }
-
-	void remove(const unsigned int index)
+	template <typename T> //<typename TINDEX, typename TVALUE>
+	struct Array
 	{
-		if (index >= Count)
-			return;
 
-		for (unsigned int i = (index + 1); i < Count; i++)
-			Items[i] = Items[i - 1];
+	protected:
+		unsigned int Capacity;
+		unsigned int Count;
 
-		Count--;
-	}
+	public:
+		T *Items;
 
-	void addItem(const T &item)
-	{
-		if (Count == Capacity)
-			resize();
+		Array()
+		{
+			Count = 0;
+			Capacity = 0;
+			Items = 0;
+		}
 
-		Items[Count] = item;
+		Array(Array<T> const &copy) // is this needed?
+		{
+			Count = copy.Count;
+			Capacity = copy.Capacity;
 
-		Count++;
-	}
+			Items = new T[Capacity];
 
-    void addArray(const Array<T> &array)
-    {
-        //could be more efficient if only resizes once and then copies all items into the array itself
-        for (int unsigned i = 0; i < array.Count; i++)
-            addItem(array[i]);
-    }
+			for (unsigned int i = 0; i < Count; i++)
+				Items[i] = copy.Items[i];
+		}
 
-    void resize()
-    {
-        resize(Capacity ? Capacity * 2 : 1);
-    }
+		unsigned int count()
+		{
+			return Count;
+		}
 
-    void resize(const unsigned int capacity)
-    {
-        T *x = new T[capacity];
+		unsigned int capacity()
+		{
+			return Capacity;
+		}
 
-        for (unsigned int i = 0; i < Count; i++)
-            x[i] = Items[i];
+		void remove(const unsigned int index)
+		{
+			if (index >= Count)
+				return;
 
-        delete[] Items;
+			for (unsigned int i = (index + 1); i < Count; i++)
+				Items[i] = Items[i - 1];
 
-        Items = x;
-        Capacity = capacity;
-    }
+			Count--;
+		}
 
-    void clear()
-    {
-        delete[] Items;
+		void addItem(const T &item)
+		{
+			if (Count == Capacity)
+				resize();
 
-        Capacity = 0;
-        Count = 0;
-    }
+			Items[Count] = item;
 
-    Array<T> & operator+=(const T &item)
-    {
-		addItem(item);
+			Count++;
+		}
 
-		return *this;
-	}
+		void addArray(const Array<T> &array)
+		{
+			//could be more efficient if only resizes once and then copies all items into the array itself
+			for (int unsigned i = 0; i < array.Count; i++)
+				addItem(array[i]);
+		}
 
-    Array<T> & operator+=(const Array<T> &array)
-    {
-		addArray(array);
+		void resize()
+		{
+			resize(Capacity ? Capacity * 2 : 1);
+		}
 
-		return *this;
-	}
+		void resize(const unsigned int capacity)
+		{
+			T *x = new T[capacity];
 
-	Array<T> & operator++(int)
-	{
-		resize(Count++);
+			for (unsigned int i = 0; i < Count; i++)
+				x[i] = Items[i];
 
-		return *this;
-	}
+			delete[] Items;
 
-    Array<T> & operator++()
-    {
-        return this->operator ++(0);
-    }
+			Items = x;
+			Capacity = capacity;
+		}
 
-	Array<T> & operator--(int)
-	{
-		clear();
+		void clone();
+		unsigned int getIndex();
 
-		return *this;
-	}
+		void clear()
+		{
+			delete[] Items;
 
-    Array<T> & operator--()
-    {
-        return this->operator --(0);
-    }
+			Capacity = 0;
+			Count = 0;
+		}
 
-    T & operator[] (unsigned int n)
-    {
-        return Items[n];
-    }
+		Array<T> operator+(const T &item) const;
+		Array<T> operator+(const Array<T> &array) const;
 
-	bool exists(const T value)
-	{
-		return false;
-	}
+		Array<T> & operator+=(const T &item)
+		{
+			addItem(item);
 
-    ~Array() {
-        delete[] Items;
-    }
-};
+			return *this;
+		}
+
+		Array<T> & operator+=(const Array<T> &array)
+		{
+			addArray(array);
+
+			return *this;
+		}
+
+		Array<T> & operator++(int)
+		{
+			resize(Count++);
+
+			return *this;
+		}
+
+		Array<T> & operator++()
+		{
+			return this->operator ++(0);
+		}
+
+		Array<T> & operator--(int)
+		{
+			clear();
+
+			return *this;
+		}
+
+		Array<T> & operator--()
+		{
+			return this->operator --(0);
+		}
+
+		T & operator[] (unsigned int n)
+		{
+			return Items[n];
+		}
+
+		bool exists(const T value)
+		{
+			return false;
+		}
+
+		~Array() {
+			delete[] Items;
+		}
+	};
 
 }
 
