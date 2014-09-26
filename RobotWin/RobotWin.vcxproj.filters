@@ -285,16 +285,16 @@
     <ClInclude Include="robot\vision-itechnique.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="landscape-maze.h">
+    <ClInclude Include="robot\landscape-maze-primsalgorithm.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="landscape.h">
+    <ClInclude Include="robot\landscape.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="landscape-maze-primsalgorithm.h">
+    <ClInclude Include="robot\landscape-maze.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="common-random.h">
+    <ClInclude Include="robot\common-random.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
   </ItemGroup>
