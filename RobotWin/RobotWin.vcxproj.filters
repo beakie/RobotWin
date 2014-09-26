@@ -294,5 +294,8 @@
     <ClInclude Include="landscape-maze-primsalgorithm.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
+    <ClInclude Include="common-random.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

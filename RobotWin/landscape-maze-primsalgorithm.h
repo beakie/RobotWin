@@ -3,7 +3,7 @@
 
 #include "common-array.h"
 #include "common-space2d-plot.h"
-#include <random>
+#include "common-random.h"
 
 namespace Landscape
 {
@@ -18,11 +18,14 @@ namespace Landscape
 			Common::Array<Common::Space2d::Plot<unsigned int>> _frontier;
 			unsigned int _rows;
 			unsigned int _columns;
+			Common::Random _random;
 
 		public:
 
 			PrimsAlgorithm(const unsigned int rows, const unsigned int columns, const unsigned int seed = 1, const unsigned int startX = 0, const unsigned int startY = 0)
 			{
+				_random = Common::Random(seed);
+
 				_rows = rows * 2 + 1;
 				_columns = columns * 2 + 1;
 
@@ -75,7 +78,7 @@ namespace Landscape
 				if (_frontier.count() == 0)
 					return;
 
-				unsigned int fIndex = rand() % _frontier.count();
+				unsigned int fIndex = _random.getNext() % _frontier.count();
 
 				unsigned int x = _frontier[fIndex].values[0];
 				unsigned int y = _frontier[fIndex].values[1];
