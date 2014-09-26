@@ -41,6 +41,8 @@ namespace Landscape
 				addCell(0, 0);
 			}
 
+		private:
+
 			void addCell(unsigned int x, unsigned int y)
 			{
 				Walls[x][y] = true;
@@ -106,6 +108,8 @@ namespace Landscape
 
 				addCell(next.values[0], next.values[1]);
 			}
+
+		public:
 
 			virtual ~PrimsAlgorithm()
 			{

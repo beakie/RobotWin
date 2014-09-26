@@ -4,17 +4,10 @@
 
 int main(int argc, char *argv[])
 {
-	//Movement::Skeletal skeletal = Movement::Skeletal();
-	//skeletal.addBone(new Movement::Servo());
-
-	Common::Matrix3f m1 = Common::Matrix3f(1, 2, 3, 3, 2, 1, 2, 1, 3);
-	Common::Matrix3f m2 = Common::Matrix3f(4, 5, 6, 6, 5, 4, 4, 6, 5);
-
-	Common::Matrix3f mNew = m1;
-
-	m1 += m2;
-
-	double x = Common::Math::Pi;
+	bool** x;
+	{
+		x = Landscape::Maze::PrimsAlgorithm(4, 4).Walls; // do proper copy
+	}
 
 	QApplication a(argc, argv);
 	RobotWin w;
