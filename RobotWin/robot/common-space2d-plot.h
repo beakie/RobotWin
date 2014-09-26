@@ -10,7 +10,8 @@ namespace Common
 namespace Space2d
 {
 
-struct Plot : Vector2<float>
+template <typename TVALUE>
+struct Plot : Vector2<TVALUE>
 {
 
 	Plot()
@@ -33,33 +34,33 @@ struct Plot : Vector2<float>
         return values[1];
     }
 
-    float distanceFrom(Plot plot)
+	float distanceFrom(Plot<TVALUE> plot)
     {
         return Math::power(Math::power(plot.values[0] - values[0], 2) + Math::power(plot.values[1] - values[1], 2), 0.5);
     }
 
-    Plot getOffset(Plot plot)
+	Plot<TVALUE> getOffset(Plot<TVALUE> plot)
     {
         return plot - *this;
     }
 
-    Plot operator+(const Plot &plot) const
+	Plot<TVALUE> operator+(const Plot<TVALUE> &plot) const
     {
-		Plot p;
+		Plot<TVALUE> p;
 
         //todo
 
         return p;
     }
 
-    Plot & operator-(const Plot &plot)
+	Plot<TVALUE> & operator-(const Plot<TVALUE> &plot)
     {
         Vector2::operator -((Vector2<float>)plot);
 
         return *this;
     }
 
-    Plot & operator=(const Plot &plot)
+	Plot<TVALUE> & operator=(const Plot<TVALUE> &plot)
     {
         Vector2::operator =((Vector2<float>)plot);
 

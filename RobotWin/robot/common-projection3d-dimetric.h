@@ -31,9 +31,9 @@ struct Dimetric: IProjection
         //todo: not finished. need rest of multiplication from wiki.
     }
 
-    Space2d::Plot getPlot(Space3d::Coordinate coordinate)
+	Space2d::Plot<float> getPlot(Space3d::Coordinate coordinate)
     {
-        return Space2d::Plot(); // todo
+		return Space2d::Plot<float>(); // todo
     }
 };
 

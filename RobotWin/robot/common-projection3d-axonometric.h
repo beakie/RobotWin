@@ -35,7 +35,7 @@ struct Axonometric: IProjection
         return projection->getMatrix();
     }
 
-    Space2d::Plot getPlot(Space3d::Coordinate coordinate)
+    Space2d::Plot<float> getPlot(Space3d::Coordinate coordinate)
     {
         return projection->getPlot(coordinate);
     }

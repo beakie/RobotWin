@@ -16,7 +16,7 @@ struct IProjection
 {
     virtual Matrix4<float> getMatrix() = 0;
     //virtual Quaternion getQuaternion() = 0;
-    virtual Space2d::Plot getPlot(Space3d::Coordinate coordinate) = 0;
+    virtual Space2d::Plot<float> getPlot(Space3d::Coordinate coordinate) = 0;
     // add getPlotwithzindex(coordinate) or maybe getzindex(coordinate)
     // maybe add isMatrixFaster() or is this just for documentation
     // each of the overrides could have static versions of getMatrix() and getQuaternion()

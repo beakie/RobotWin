@@ -18,9 +18,9 @@ struct WeakPerspectiveX: IProjection
         return Matrix4<float>(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     }
 
-    Space2d::Plot getPlot(Space3d::Coordinate coordinate)
+    Space2d::Plot<float> getPlot(Space3d::Coordinate coordinate)
     {
-        return Space2d::Plot(coordinate.values[2], coordinate.values[1]);
+        return Space2d::Plot<float>(coordinate.values[2], coordinate.values[1]);
     }
 };
 

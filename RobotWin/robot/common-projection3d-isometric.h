@@ -16,9 +16,9 @@ struct Isometric: IProjection
         return Matrix4<float>(); // todo
     }
 
-    Space2d::Plot getPlot(Space3d::Coordinate coordinate)
+	Space2d::Plot<float> getPlot(Space3d::Coordinate coordinate)
     {
-        return Space2d::Plot(); // todo
+		return Space2d::Plot<float>(); // todo
     }
 };
 

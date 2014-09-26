@@ -11,8 +11,8 @@ namespace Space2d
 
 struct LineSegment
 {
-    Plot From;
-    Plot To;
+    Plot<float> From;
+	Plot<float> To;
 
     float length()
     {
