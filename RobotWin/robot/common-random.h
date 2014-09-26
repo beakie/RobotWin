@@ -1,3 +1,6 @@
+#ifndef COMMONRANDOMIZER_H
+#define COMMONRANDOMIZER_H
+
 // http://en.wikipedia.org/wiki/Mersenne_twister
 
 namespace Common
@@ -5,7 +8,7 @@ namespace Common
 	class Randomizer
 	{
 	private:
-		static unsigned int _seed;
+		unsigned int _seed;
 
 	public:
 		Randomizer(const unsigned int seed = 1)
@@ -20,3 +23,5 @@ namespace Common
 		}
 	};
 }
+
+#endif // COMMONRANDOMIZER_H
