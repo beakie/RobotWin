@@ -285,5 +285,14 @@
     <ClInclude Include="robot\vision-itechnique.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
+    <ClInclude Include="landscape-maze.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="landscape.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="landscape-maze-primsalgorithm.h">
+      <Filter>Header Files\Robot</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

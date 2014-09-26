@@ -118,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_robotwin.h" />
+    <ClInclude Include="landscape-maze-primsalgorithm.h" />
+    <ClInclude Include="landscape-maze.h" />
+    <ClInclude Include="landscape.h" />
     <ClInclude Include="robot\common-array.h" />
     <ClInclude Include="robot\common-imatrix.h" />
     <ClInclude Include="robot\common-math.h" />
