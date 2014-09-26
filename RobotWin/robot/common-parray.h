@@ -38,7 +38,7 @@ public:
     {
         for(unsigned int i = 0; i < this->Count; i++)
         {
-            delete this->Items[i];
+            delete this->Items[i]; //does this dispose before Array? Make sure it does.
         }
     }
 

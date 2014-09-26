@@ -21,7 +21,7 @@ namespace Landscape
 
 		public:
 
-			PrimsAlgorithm(const unsigned int rows, const unsigned int columns, const unsigned int seed)
+			PrimsAlgorithm(const unsigned int rows, const unsigned int columns, const unsigned int seed = 1, const unsigned int startX = 0, const unsigned int startY = 0)
 			{
 				_rows = rows * 2 + 1;
 				_columns = columns * 2 + 1;
@@ -38,7 +38,7 @@ namespace Landscape
 
 				_frontier = Common::Array<Common::Space2d::Plot<unsigned int>>();
 
-				addCell(0, 0);
+				addCell(startX, startY);
 			}
 
 		private:
@@ -114,9 +114,7 @@ namespace Landscape
 			virtual ~PrimsAlgorithm()
 			{
 				for (int i = 0; i < _rows; i++)
-				{
 					delete[] Walls[i];
-				}
 
 				delete[] Walls;
 			}

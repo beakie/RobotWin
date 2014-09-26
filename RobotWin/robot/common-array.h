@@ -21,7 +21,7 @@ namespace Common
 		{
 			Count = 0;
 			Capacity = 0;
-			Items = 0;
+			Items = new TVALUE[0];
 		}
 
 		Array(Array<TVALUE, TINDEX> const &copy) // is this needed?
@@ -45,7 +45,7 @@ namespace Common
 			return Capacity;
 		}
 
-		void remove(const TINDEX index)
+		Array<TVALUE, TINDEX>& remove(const TINDEX index)
 		{
 			if (index >= Count)
 				return;
@@ -84,7 +84,7 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone(); // equals operator? if not, >> operator?
+		void clone(); // equals operator? if not, >> could be clone out, << could be clone in
 		TINDEX getIndex();
 
 		void clear()
