@@ -6,16 +6,16 @@
 namespace Common
 {
 
-	template <typename T> //<typename TINDEX, typename TVALUE>
+	template <typename TVALUE, typename TINDEX = unsigned int>
 	struct Array
 	{
 
 	protected:
-		unsigned int Capacity;
-		unsigned int Count;
+		TINDEX Capacity;
+		TINDEX Count;
 
 	public:
-		T *Items;
+		TVALUE *Items;
 
 		Array()
 		{
@@ -24,39 +24,39 @@ namespace Common
 			Items = 0;
 		}
 
-		Array(Array<T> const &copy) // is this needed?
+		Array(Array<TINDEX, TVALUE> const &copy) // is this needed?
 		{
 			Count = copy.Count;
 			Capacity = copy.Capacity;
 
-			Items = new T[Capacity];
+			Items = new TVALUE[Capacity];
 
-			for (unsigned int i = 0; i < Count; i++)
+			for (TINDEX i = 0; i < Count; i++)
 				Items[i] = copy.Items[i];
 		}
 
-		unsigned int count()
+		TINDEX count() const
 		{
 			return Count;
 		}
 
-		unsigned int capacity()
+		TINDEX capacity() const
 		{
 			return Capacity;
 		}
 
-		void remove(const unsigned int index)
+		void remove(const TINDEX index)
 		{
 			if (index >= Count)
 				return;
 
-			for (unsigned int i = (index + 1); i < Count; i++)
+			for (TINDEX i = (index + 1); i < Count; i++)
 				Items[i] = Items[i - 1];
 
 			Count--;
 		}
 
-		void addItem(const T &item)
+		void addItem(const TVALUE &item)
 		{
 			if (Count == Capacity)
 				resize();
@@ -66,10 +66,10 @@ namespace Common
 			Count++;
 		}
 
-		void addArray(const Array<T> &array)
+		void addArray(const Array<TINDEX, TVALUE> &array)
 		{
 			//could be more efficient if only resizes once and then copies all items into the array itself
-			for (int unsigned i = 0; i < array.Count; i++)
+			for (TINDEX i = 0; i < array.Count; i++)
 				addItem(array[i]);
 		}
 
@@ -78,11 +78,11 @@ namespace Common
 			resize(Capacity ? Capacity * 2 : 1);
 		}
 
-		void resize(const unsigned int capacity)
+		void resize(const TINDEX capacity)
 		{
-			T *x = new T[capacity];
+			TVALUE *x = new TVALUE[capacity];
 
-			for (unsigned int i = 0; i < Count; i++)
+			for (TINDEX i = 0; i < Count; i++)
 				x[i] = Items[i];
 
 			delete[] Items;
@@ -92,7 +92,7 @@ namespace Common
 		}
 
 		void clone();
-		unsigned int getIndex();
+		TINDEX getIndex();
 
 		void clear()
 		{
@@ -102,53 +102,53 @@ namespace Common
 			Count = 0;
 		}
 
-		Array<T> operator+(const T &item) const;
-		Array<T> operator+(const Array<T> &array) const;
+		Array<TINDEX, TVALUE> operator+(const TVALUE &item) const;
+		Array<TINDEX, TVALUE> operator+(const Array<TINDEX, TVALUE> &array) const;
 
-		Array<T> & operator+=(const T &item)
+		Array<TINDEX, TVALUE> & operator+=(const TVALUE &item)
 		{
 			addItem(item);
 
 			return *this;
 		}
 
-		Array<T> & operator+=(const Array<T> &array)
+		Array<TINDEX, TVALUE> & operator+=(const Array<TINDEX, TVALUE> &array)
 		{
 			addArray(array);
 
 			return *this;
 		}
 
-		Array<T> & operator++(int)
+		Array<TINDEX, TVALUE> & operator++(int)
 		{
 			resize(Count++);
 
 			return *this;
 		}
 
-		Array<T> & operator++()
+		Array<TINDEX, TVALUE> & operator++()
 		{
 			return this->operator ++(0);
 		}
 
-		Array<T> & operator--(int)
+		Array<TINDEX, TVALUE> & operator--(int)
 		{
 			clear();
 
 			return *this;
 		}
 
-		Array<T> & operator--()
+		Array<TINDEX, TVALUE> & operator--()
 		{
 			return this->operator --(0);
 		}
 
-		T & operator[] (unsigned int n)
+		TVALUE & operator[] (TINDEX n)
 		{
 			return Items[n];
 		}
 
-		bool exists(const T value)
+		bool exists(const TVALUE value)
 		{
 			return false;
 		}

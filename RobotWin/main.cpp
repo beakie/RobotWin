@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
 		x = Landscape::Maze::PrimsAlgorithm(4, 4).Walls; // do proper copy
 	}
 
+	Common::Array<int> i;
+
 	QApplication a(argc, argv);
 	RobotWin w;
 	w.show();
