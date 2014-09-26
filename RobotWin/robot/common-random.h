@@ -15,7 +15,7 @@ namespace Common
 
 		unsigned int getNext(const unsigned int lower = 0, const unsigned int upper = 0)
 		{
-			_seed = 7 * _seed % 11;
+			_seed = 7 * _seed % 11 * 13 % 17;
 			return _seed % (upper - lower + 1) + lower;
 		}
 	};
