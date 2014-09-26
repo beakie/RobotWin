@@ -1,16 +1,14 @@
 // http://en.wikipedia.org/wiki/Mersenne_twister
 
-#include <random>
-
 namespace Common
 {
-	class Random
+	class Randomizer
 	{
 	private:
 		static unsigned int _seed;
 
 	public:
-		Random(const unsigned int seed = 0)
+		Randomizer(const unsigned int seed = 0)
 		{
 			_seed = seed;
 		}

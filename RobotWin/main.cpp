@@ -4,7 +4,8 @@
 
 int main(int argc, char *argv[])
 {
-	Common::Random random = Common::Random(123);
+	Common::Randomizer random;
+	random = Common::Randomizer(123);
 
 	bool** x;
 	{
