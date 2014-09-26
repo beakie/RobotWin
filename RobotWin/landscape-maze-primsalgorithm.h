@@ -21,7 +21,7 @@ namespace Landscape
 
 		public:
 
-			PrimsAlgorithm(const unsigned int rows, const unsigned int columns)
+			PrimsAlgorithm(const unsigned int rows, const unsigned int columns, const unsigned int seed)
 			{
 				_rows = rows * 2 + 1;
 				_columns = columns * 2 + 1;
@@ -39,11 +39,6 @@ namespace Landscape
 				_frontier = Common::Array<Common::Space2d::Plot<unsigned int>>();
 
 				addCell(0, 0);
-			}
-
-			void getWallImage()
-			{
-
 			}
 
 		private:

@@ -24,7 +24,7 @@ namespace Common
 			Items = 0;
 		}
 
-		Array(Array<TINDEX, TVALUE> const &copy) // is this needed?
+		Array(Array<TVALUE, TINDEX> const &copy) // is this needed?
 		{
 			Count = copy.Count;
 			Capacity = copy.Capacity;
@@ -56,21 +56,14 @@ namespace Common
 			Count--;
 		}
 
-		void addItem(const TVALUE &item)
+		Array<TVALUE, TINDEX>& addItem(const TVALUE &item)
 		{
-			if (Count == Capacity)
-				resize();
-
-			Items[Count] = item;
-
-			Count++;
+			return operator +=(item);
 		}
 
-		void addArray(const Array<TINDEX, TVALUE> &array)
+		Array<TVALUE, TINDEX>& addArray(const Array<TVALUE, TINDEX> &array)
 		{
-			//could be more efficient if only resizes once and then copies all items into the array itself
-			for (TINDEX i = 0; i < array.Count; i++)
-				addItem(array[i]);
+			return operator +=(array);
 		}
 
 		void resize()
@@ -91,54 +84,63 @@ namespace Common
 			Capacity = capacity;
 		}
 
-		void clone();
+		void clone(); // equals operator? if not, >> operator?
 		TINDEX getIndex();
 
 		void clear()
 		{
 			delete[] Items;
 
+			Items = new TVALUE[0];
+
 			Capacity = 0;
 			Count = 0;
 		}
 
-		Array<TINDEX, TVALUE> operator+(const TVALUE &item) const;
-		Array<TINDEX, TVALUE> operator+(const Array<TINDEX, TVALUE> &array) const;
+		Array<TVALUE, TINDEX> operator+(const TVALUE &item) const;
+		Array<TVALUE, TINDEX> operator+(const Array<TVALUE, TINDEX> &array) const;
 
-		Array<TINDEX, TVALUE> & operator+=(const TVALUE &item)
+		Array<TVALUE, TINDEX> & operator+=(const TVALUE &item)
 		{
-			addItem(item);
+			if (Count == Capacity)
+				resize();
+
+			Items[Count] = item;
+
+			Count++;
 
 			return *this;
 		}
 
-		Array<TINDEX, TVALUE> & operator+=(const Array<TINDEX, TVALUE> &array)
+		Array<TVALUE, TINDEX> & operator+=(const Array<TVALUE, TINDEX> &array)
 		{
-			addArray(array);
+			//could be more efficient if only resizes once and then copies all items into the array itself
+			for (TINDEX i = 0; i < array.Count; i++)
+				addItem(array[i]);
 
 			return *this;
 		}
 
-		Array<TINDEX, TVALUE> & operator++(int)
+		Array<TVALUE, TINDEX> & operator++(int)
 		{
 			resize(Count++);
 
 			return *this;
 		}
 
-		Array<TINDEX, TVALUE> & operator++()
+		Array<TVALUE, TINDEX> & operator++()
 		{
 			return this->operator ++(0);
 		}
 
-		Array<TINDEX, TVALUE> & operator--(int)
+		Array<TVALUE, TINDEX> & operator--(int)
 		{
 			clear();
 
 			return *this;
 		}
 
-		Array<TINDEX, TVALUE> & operator--()
+		Array<TVALUE, TINDEX> & operator--()
 		{
 			return this->operator --(0);
 		}
