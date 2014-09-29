@@ -72,9 +72,6 @@
     <ClInclude Include="robot\common.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>
-    <ClInclude Include="robot\common_types.h">
-      <Filter>Header Files\Robot</Filter>
-    </ClInclude>
     <ClInclude Include="robot\common-array.h">
       <Filter>Header Files\Robot</Filter>
     </ClInclude>

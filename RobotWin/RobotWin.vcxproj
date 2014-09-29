@@ -181,7 +181,6 @@
     <ClInclude Include="robot\common-vector3.h" />
     <ClInclude Include="robot\common-vector4.h" />
     <ClInclude Include="robot\common.h" />
-    <ClInclude Include="robot\common_types.h" />
     <ClInclude Include="robot\emulation.h" />
     <ClInclude Include="robot\implementations-qt.h" />
     <ClInclude Include="robot\implementations.h" />
