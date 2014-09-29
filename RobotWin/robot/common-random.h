@@ -2,6 +2,7 @@
 #define COMMONRANDOMIZER_H
 
 // http://en.wikipedia.org/wiki/Mersenne_twister
+// http://en.wikipedia.org/wiki/Linear_congruential_generator
 
 namespace Common
 {
@@ -16,10 +17,16 @@ namespace Common
 			_seed = seed;
 		}
 
-		unsigned int getNext(const unsigned int lower = 0, const unsigned int upper = 0)
+		// Linear Congruential Generator
+		unsigned int getNext(const unsigned int lower, const unsigned int upper)
 		{
-			_seed = 7 * _seed % 11 * 13 % 17;
-			return _seed % (upper - lower + 1) + lower;
+			return getNext() % (upper - lower + 1) + lower;
+		}
+
+		unsigned int getNext()
+		{
+			_seed = _seed * 1664525 + 1013904223;
+			return (_seed >> 24);
 		}
 	};
 }

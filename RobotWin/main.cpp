@@ -6,6 +6,37 @@ int main(int argc, char *argv[])
 {
 	Common::Randomizer random;
 	random = Common::Randomizer(123);
+	unsigned int r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
+	r = random.getNext(0, 10);
 
 	bool** x;
 	{
